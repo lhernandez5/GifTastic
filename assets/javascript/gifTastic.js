@@ -17,6 +17,7 @@ function displayTopicInfo() {
   var queryURL = url + animal + key;
 
   $("#animals-view").empty();
+
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -108,9 +109,7 @@ function renderButtons() {
 $("#add-animal.btn.btn-primary").on("click", function(event) {
   event.preventDefault();
   // This line grabs the input from the textbox
-  var animal = $("#animal-input")
-    .val()
-    .trim();
+  var animal = $("#animal-input").val().trim();
 
   // Adding animal from the textbox to our array
   topics.push(animal);
