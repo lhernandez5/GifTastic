@@ -64,7 +64,6 @@ function displayTopicInfo() {
         // Putting the entire movie above the previous movies
         $("#animals-view").prepend(topicDiv);
 
-
         $(".gif").on("click", function() {
           // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
           var state = $(this).attr("data-state");
@@ -81,8 +80,6 @@ function displayTopicInfo() {
           }
         });
 
-
-
       }
     })
     .catch(err => {
@@ -91,18 +88,19 @@ function displayTopicInfo() {
 }
 
 function renderButtons() {
-  // Deleting the movies prior to adding new movies
+  // Deleting the animals prior to adding new animals
   // (this is necessary otherwise you will have repeat buttons)
   $("#buttons-view").empty();
 
   // Looping through the array of movies
   for (var i = 0; i < topics.length; i++) {
-    // Then dynamicaly generating buttons for each movie in the array
+
+    // Then dynamicaly generating buttons for each animal in the array
     // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
     var a = $("<button>");
 
-    // Adding a class of movie-btn to our button
-    a.addClass("animal-btn");
+    // Adding a class of animal-btn to our button
+    a.addClass("animal-btn btn btn-info");
 
     // Adding a data-attribute
     a.attr("data-name", topics[i]);
@@ -116,13 +114,11 @@ function renderButtons() {
 }
 
 $("#add-animal.btn.btn-primary").on("click", function(event) {
-  // event.preventDefault();
+  event.preventDefault();
   // This line grabs the input from the textbox
-  var animal = $("#animal-input")
-    .val()
-    .trim();
+  var animal = $("#animal-input").val().trim();
 
-  // Adding movie from the textbox to our array
+  // Adding animal from the textbox to our array
   topics.push(animal);
 
   // Calling renderButtons which handles the processing of our movie array
@@ -130,7 +126,7 @@ $("#add-animal.btn.btn-primary").on("click", function(event) {
 });
 
 // Adding a click event listener to all elements with a class of "movie-btn"
-$(document).on("click", ".animal-btn", displayTopicInfo);
+$(document).on("click", ".animal-btn.btn.btn-info", displayTopicInfo);
 
 // Calling the renderButtons function to display the intial buttons
 renderButtons();

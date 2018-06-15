@@ -14,10 +14,6 @@ label{
 #add-animal.btn.btn-primary{
     margin: 3%;
 }
-.animal-btn{
-
-
-}
 .navbar.fixed-bottom {
     background-color: #777777 !important;
     color: #cccccc;
@@ -50,4 +46,11 @@ label{
   }
   .topic{
       margin: 10%;
+  }
+  body{
+    background-image: url(../images/congruent_pentagon.png);
+
+  }
+  .animal-btn.btn.btn-info{
+    margin: .5%;
   }
