@@ -16,6 +16,7 @@ function displayTopicInfo() {
   var key = "&api_key=fmRet6tdtCKvnnfM5jlQ3355cYy1p7wG&limit=10";
   var queryURL = url + animal + key;
 
+  $("#animals-view").empty();
   $.ajax({
     url: queryURL,
     method: "GET"
