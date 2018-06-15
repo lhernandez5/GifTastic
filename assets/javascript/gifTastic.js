@@ -11,16 +11,13 @@ var topics = [
   "sloth"
 ];
 function displayTopicInfo() {
-  //var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR_API_KEY&limit=5");
-  //xhr.done(function(data) { console.log("success got data", data); });
+
   var animal = $(this).attr("data-name");
   var url = "https://api.giphy.com/v1/gifs/search?q=";
-
   var key = "&api_key=fmRet6tdtCKvnnfM5jlQ3355cYy1p7wG&limit=10";
   var queryURL = url + animal + key;
   console.log(queryURL);
-  // http://api.giphy.com/v1/gifs/search?q=cats&api_key=fmRet6tdtCKvnnfM5jlQ3355cYy1p7wG&limit=10
-  // Creating an AJAX call for the specific movie button being clicked
+
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -28,7 +25,7 @@ function displayTopicInfo() {
     .then(function(response) {
       console.log(response);
       for (var i = 0; i < 10; i++) {
-        // Creating a div to hold the movie
+        // Creating a div to hold the animal
         var topicDiv = $("<div class='topic'>");
 
         // Storing the rating data
@@ -61,7 +58,7 @@ function displayTopicInfo() {
         // Appending the image
         topicDiv.prepend(image);
 
-        // Putting the entire movie above the previous movies
+        // Putting the entire animal above the previous animals
         $("#animals-view").prepend(topicDiv);
 
         $(".gif").on("click", function() {
@@ -121,11 +118,11 @@ $("#add-animal.btn.btn-primary").on("click", function(event) {
   // Adding animal from the textbox to our array
   topics.push(animal);
 
-  // Calling renderButtons which handles the processing of our movie array
+  // Calling renderButtons which handles the processing of our topics array
   renderButtons();
 });
 
-// Adding a click event listener to all elements with a class of "movie-btn"
+// Adding a click event listener to all elements with a class of "animal-btn"
 $(document).on("click", ".animal-btn.btn.btn-info", displayTopicInfo);
 
 // Calling the renderButtons function to display the intial buttons
