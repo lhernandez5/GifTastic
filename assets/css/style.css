@@ -1,12 +1,12 @@
 .form-group{
   background-color: lightblue;
-  margin: 3%;
+  margin-top: 10%;
 }
 label{
     margin: 3%;
     font-weight: bold;
     font-size: 20px;
-    color: whitesmoke;
+    color: #1247d6 ;
 }
 #animal-input{
     margin: 3%;
@@ -63,4 +63,7 @@ label{
   img.gif{
     height: 300px;
     width: 350px;
+  }
+  #buttons-view{
+    margin: 5%;
   }

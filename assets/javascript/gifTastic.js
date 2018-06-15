@@ -16,7 +16,6 @@ function displayTopicInfo() {
   var url = "https://api.giphy.com/v1/gifs/search?q=";
   var key = "&api_key=fmRet6tdtCKvnnfM5jlQ3355cYy1p7wG&limit=10";
   var queryURL = url + animal + key;
-  console.log(queryURL);
 
   $.ajax({
     url: queryURL,
