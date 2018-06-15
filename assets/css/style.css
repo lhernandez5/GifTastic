@@ -67,3 +67,7 @@ label{
   #buttons-view{
     margin: 5%;
   }
+  .col-md-12{
+    margin: 2%;
+    text-align: center;
+  }
