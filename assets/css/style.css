@@ -46,7 +46,10 @@ label{
     font-size: 20px;
   }
   .topic{
-      margin: 10%;
+      margin: 2%;
+      float: left;
+      text-align:right;
+
   }
   body{
     background-image: url(../images/congruent_pentagon.png);
@@ -66,8 +69,8 @@ label{
   img.gif{
     height: 200px;
     width: 300px;
-    margin-bottom: 5%;
-    float: left;
+    margin: 10%;
+ 
   }
   #buttons-view{
     margin: 5%;
@@ -78,5 +81,6 @@ label{
     font-family: 'Luckiest Guy', cursive;
     color: #081074;
   }
+
  
  
