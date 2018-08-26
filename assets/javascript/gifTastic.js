@@ -10,7 +10,6 @@ var topics = [
   "turtle",
   "sloth"
 ];
-
 function displayTopicInfo() {
   var animal = $(this).attr("data-name");
   var url = "https://api.giphy.com/v1/gifs/search?q=";
@@ -49,6 +48,7 @@ function displayTopicInfo() {
         image.attr("data-still", imgURL);
 
         image.attr("data-animate", animate);
+        console.log("this is the animate " + animate);
 
         image.attr("data-state", "still");
 
@@ -64,6 +64,7 @@ function displayTopicInfo() {
 
         // If the clicked image's state is still, update its src attribute to what its data-animate value is.
         // Then, set the image's data-state to animate
+        // Else set src to the data-still value
         if (state === "still") {
           $(this).attr("src", $(this).attr("data-animate"));
           $(this).attr("data-state", "animate");
@@ -79,11 +80,14 @@ function displayTopicInfo() {
 }
 
 function renderButtons() {
-  // Deleting the animals prior to adding new animal otherwise there will be repeat buttons
+  // Deleting the animals prior to adding new animals
+  // (this is necessary otherwise you will have repeat buttons)
   $("#buttons-view").empty();
 
+  // Looping through the array of movies
   for (var i = 0; i < topics.length; i++) {
     // Then dynamicaly generating buttons for each animal in the array
+    // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
     var a = $("<button>");
 
     // Adding a class of animal-btn to our button
