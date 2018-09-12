@@ -82,13 +82,5 @@ label{
     color: #081074;
   }
 
-  @media screen and (max-width: 375px) {
-    .form-group{
-      background-color: lightblue;
-      margin-top: 0% !important;
-      margin-bottom: 50%;
-    }
-  }
-
  
  
