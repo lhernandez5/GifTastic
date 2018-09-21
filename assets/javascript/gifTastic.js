@@ -8,7 +8,9 @@ var topics = [
   "bird",
   "ferret",
   "turtle",
-  "sloth"
+  "sloth",
+  "koala",
+  "monkey"
 ];
 function displayTopicInfo() {
   var animal = $(this).attr("data-name");
